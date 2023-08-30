@@ -120,8 +120,28 @@ NavX(selectedIndex: $selectedIndex) {
 
 We welcome contributions! Please see CONTRIBUTING.md for details.
 
-## License
+# License for NavX
 
-(Include your licensing information here. E.g., "NavX is available under the MIT license. See the LICENSE file for more info.")
+## Copyright
+
+All rights reserved. This work is copyrighted to the original author.
+
+## Permission for Non-commercial Use
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to use the Software in non-commercial applications, including the rights to use, copy, and modify the Software, subject to the following conditions:
+
+- The Software may not be used for commercial purposes without express written permission.
+- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+## Commercial Use
+
+For permission to use the Software in commercial applications, please reach out to the original author for written consent:
+
+Email: [matt@getnovara.com](mailto:matt@getnovara.com)
+
+## Disclaimer
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 ```
 
