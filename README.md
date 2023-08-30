@@ -1,5 +1,5 @@
 # NavX
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Version](https://img.shields.io/badge/version-1.0.2-blue)
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-blue)
 ![iOS](https://img.shields.io/badge/iOS-blue)
 ![Minimum iOS version](https://img.shields.io/badge/Minimum%20iOS%20version-15-blue)
@@ -54,27 +54,18 @@ Replace YOUR_PROJECT_NAME, YOUR_GITHUB_USERNAME, YourPackageName, and YOUR_TARGE
 
 ## Features
 
-### PageXItem Protocol
-
-A protocol that defines items suitable for the `NavX` navigation system. Each `PageXItem` can provide:
-
-- `iconX`: An optional icon to be displayed on the tab bar.
-- `titleX`: An optional title representing the content or purpose of the view.
-- `foregroundColorX`: A custom foreground color for the tab item.
-- `tabX`: A closure returning a custom view for advanced tab customization.
-
-### PageX Struct
-
-A concrete implementation of the `PageXItem` protocol, which represents an individual page item within the `NavX` navigation system. It provides several chaining methods to customize:
-
-- `iconX(_ iconName: String)`: Set an icon for the tab.
-- `titleX(_ newTitle: String)`: Set the title for the tab.
-- `foregroundColorX(_ newColor: Color)`: Define a custom foreground color.
-- `tabX(_ newView: @escaping () -> any View)`: Offer a custom tab view.
-
 ### NavX View
 
 The primary navigation view that manages and displays a series of `PageXItem` views. Key features include:
+
+```swift
+NavX(selecedIndex: $selectedIndex) {...}
+    .barAlignment(.center)
+    .barX { bar in ... }
+    .respectedBarSafeAreas(.all)
+    .ignoredPageSafeAreas(.all)
+    .pageScrollIndicator(.always)
+```
 
 - `barAlignment(_ value: Alignment)`: Aligns the navigation bar.
 - `barX(_ newView: @escaping (any View) -> any View)`: Modify the tab bar view.
@@ -82,9 +73,55 @@ The primary navigation view that manages and displays a series of `PageXItem` vi
 - `ignoredPageSafeAreas(_ value: Edge.Set)`: Ignore specific safe areas, causing content to overlay the navigation stack and safe area.
 - `pageScrollIndicator(_ value: ScrollIndicatorVisibility)`: Configure scroll bar visibility.
 
-### PageBuilder
+### PageX View
 
-A result builder for SwiftUI that facilitates the creation of `PageXItem` collections. It allows for a more declarative syntax when defining multiple page items for the navigation system.
+A concrete implementation of the `PageXItem` protocol, which represents an individual page item within the `NavX` navigation system. It provides several chaining methods to customize.
+This should contain your `page content`.
+
+```swift
+NavX { ...
+    PageX { ... }
+    .iconX("house")
+    .titleX("Home")
+    .foregroundColorX(.black)
+    .tabX {
+        Circle()
+            .fill(.gray)
+            .frame(width: 40, height: 40)
+    
+}
+```
+
+- `iconX(_ iconName: String)`: Set an icon for the tab.
+- `titleX(_ newTitle: String)`: Set the title for the tab.
+- `foregroundColorX(_ newColor: Color)`: Define a custom foreground color.
+- `tabX(_ newView: @escaping () -> any View)`: Offer a custom tab view.
+
+### PageXItem Protocol
+
+```swift
+/// A protocol that represents an individual page item to be used within a `NavX` navigation system.
+///
+/// By conforming to `PageXItem`, a view becomes suitable for integration within the `NavX` tab-based navigation interface.
+/// Each `PageXItem` can provide an icon, a title, a foreground color, and a custom tab view.
+public protocol PageXItem: View {
+    
+    /// An optional system name of the icon to be displayed on the tab bar.
+    var iconX: String? { get }
+    
+    /// An optional title to be displayed on the tab bar.
+    /// This title typically represents the content or purpose of the associated view.
+    var titleX: String? { get }
+    
+    /// An optional foreground color for the tab item.
+    /// This color will be applied to the icon and title of the tab item.
+    var foregroundColorX: Color? { get }
+    
+    /// An optional closure that returns a custom view for the tab.
+    /// This allows for more advanced customization of the tab beyond just an icon and title.
+    var tabX: (() -> any View)? { get }
+}
+```
 
 ## Usage
 
@@ -105,6 +142,8 @@ let navView = NavX(selectedIndex: .constant(0)) {
 
 ```
 ## Advanced Usage
+
+Using the combination of `NavX(...)` and `PageX(...)` with their respective modifiers, you can create a fully customized tab bar system.
 
 ```swift
 NavX(selectedIndex: $selectedIndex) {

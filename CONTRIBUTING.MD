@@ -4,7 +4,12 @@ First and foremost, thank you for considering contributing to NavX! We appreciat
 
 ## Code of Conduct
 
-By participating in this project, you agree to abide by our Code of Conduct. Please read it before participating.
+By participating in this project, you agree to abide by our Code of Conduct.
+
+- **Be respectful**: Disagreement is fine, but be respectful of others. Any form of harassment or abusive behavior will not be tolerated.
+- **Keep it legal**: Any content that violates the law will be removed and reported to the authorities.
+- **Keep it relevant**: Please keep all discussions relevant to the project. Off-topic discussions will be removed.
+- **Keep it civil**: If you see any violations of the Code of Conduct, please report them to the project maintainers.
 
 ## Ways to Contribute
 
