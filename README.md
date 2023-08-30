@@ -3,10 +3,9 @@
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-blue)
 ![iOS](https://img.shields.io/badge/iOS-blue)
 ![Minimum iOS version](https://img.shields.io/badge/Minimum%20iOS%20version-15-blue)
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/mkaulfers)
 
 NavX is a custom SwiftUI navigation framework designed for easy and intuitive tab-based navigation on iOS.
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/mkaulfers)
 
 ## Table of Contents
 
@@ -22,7 +21,35 @@ NavX is a custom SwiftUI navigation framework designed for easy and intuitive ta
 
 ## Installation
 
-(Include steps on how to install or integrate your library. For instance, via Swift Package Manager, CocoaPods, etc.)
+### Swift Package Manager
+
+In Xcode, navigate to your project's settings
+Select the "Swift Packages" tab
+Click the "+" icon to add a new package
+Paste the repository URL (https://github.com/mkaulfers/NavX.git) and click "Next"
+For the version rule, select "Up to Next Major" and specify 1.0.0 as the minimum version, then click "Next"
+Choose the target where you want to use the package, and then click "Finish"
+
+### Alternatively, you can add the package directly via Xcode:
+
+You can use The Swift Package Manager to install [NavX] by adding the proper description to your Package.swift file:
+
+```swift
+// swift-tools-version:5.2
+import PackageDescription
+
+let package = Package(
+    name: "YOUR_PROJECT_NAME",
+    dependencies: [
+        .package(url: "https://github.com/YOUR_GITHUB_USERNAME/YourPackageName.git", from: "1.0.0")
+    ],
+    targets: [
+        .target(name: "YOUR_TARGET_NAME", dependencies: ["YourPackageName"])
+    ]
+)
+```
+
+Replace YOUR_PROJECT_NAME, YOUR_GITHUB_USERNAME, YourPackageName, and YOUR_TARGET_NAME with appropriate values for your project.
 
 ## Features
 
