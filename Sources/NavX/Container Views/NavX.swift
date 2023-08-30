@@ -8,11 +8,20 @@
 import SwiftUI
 
 #if os(iOS)
+/// A custom navigational view that provides a tab bar interface and manages the content of each tab.
+///
+/// - Parameters:
+///     - Content: A sequence of items that conform to `PageXItem`.
 public struct NavX<Content: Sequence>: View where Content.Element == any PageXItem {
     @Environment(\.safeAreaInsets) private var safeAreaInsets
     @Binding var selectedIndex: Int
     @PageBuilder private var content: () -> Content
     
+    /// Initializes a new `NavX` with a selected index binding and content.
+    ///
+    /// - Parameters:
+    ///   - selectedIndex: A binding to the currently selected index.
+    ///   - content: A closure that returns the sequence of `PageXItem` views to be managed.
     public init(selectedIndex: Binding<Int>, @PageBuilder content: @escaping () -> Content) {
         _selectedIndex = selectedIndex
         self.content = content
@@ -111,6 +120,10 @@ public struct NavX<Content: Sequence>: View where Content.Element == any PageXIt
     }
     
     @discardableResult
+    /// Aligns the bar to a specified alignment. Default alignment is `.bottom`.
+    ///
+    /// - Parameter value: The desired alignment for the bar.
+    /// - Returns: A new instance of `NavX` with the bar aligned to the specified position.
     public func barAlignment(_ value: Alignment) -> NavX {
         var copy = self
         copy.barAlignment = value
@@ -118,6 +131,10 @@ public struct NavX<Content: Sequence>: View where Content.Element == any PageXIt
     }
     
     @discardableResult
+    /// Provides a custom view modifier for the `TabBar` view.
+    ///
+    /// - Parameter newView: A closure that takes an input view and returns a modified view.
+    /// - Returns: A new instance of `NavX` with the modified `TabBar` view.
     public func barX(_ newView: @escaping (any View) -> any View) -> NavX {
         var copy = self
         copy.barX = newView
@@ -125,6 +142,10 @@ public struct NavX<Content: Sequence>: View where Content.Element == any PageXIt
     }
     
     @discardableResult
+    /// Adjusts the padding of the tab bar based on the provided set of edges.
+    ///
+    /// - Parameter value: The set of edges to which the tab bar should respect safe areas.
+    /// - Returns: A new instance of `NavX` with adjusted padding.
     public func respectedBarSafeAreas(_ value: Edge.Set) -> NavX {
         var copy = self
         copy.respectedBarSafeAreas = value
@@ -132,6 +153,10 @@ public struct NavX<Content: Sequence>: View where Content.Element == any PageXIt
     }
     
     @discardableResult
+    /// Specifies which safe areas should be ignored by the content view.
+    ///
+    /// - Parameter value: The set of edges for which safe areas should be ignored.
+    /// - Returns: A new instance of `NavX` with specified safe areas to ignore.
     public func ignoredPageSafeAreas(_ value: Edge.Set) -> NavX {
         var copy = self
         copy.ignoredPageSafeAreas = value
@@ -139,6 +164,10 @@ public struct NavX<Content: Sequence>: View where Content.Element == any PageXIt
     }
     
     @discardableResult
+    /// Configures the visibility of the scroll indicator for the pages.
+    ///
+    /// - Parameter value: The desired visibility setting for the scroll indicator.
+    /// - Returns: A new instance of `NavX` with the configured scroll indicator visibility.
     public func pageScrollIndicator(_ value: ScrollIndicatorVisibility) -> NavX {
         var copy = self
         copy.pageScrollIndicator = value
