@@ -3,7 +3,7 @@
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-blue)
 ![iOS](https://img.shields.io/badge/iOS-blue)
 ![Minimum iOS version](https://img.shields.io/badge/Minimum%20iOS%20version-15-blue)
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/mkaulfers)
+[["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/mkaulfers)
 
 NavX is a custom SwiftUI navigation framework designed for easy and intuitive tab-based navigation on iOS.
 
