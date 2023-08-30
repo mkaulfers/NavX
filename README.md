@@ -70,6 +70,52 @@ let navView = NavX(selectedIndex: .constant(0)) {
 }
 
 ```
+## Advanced Usage
+
+```swift
+NavX(selectedIndex: $selectedIndex) {
+    PageX {
+        Color.red
+            .frame(height: UIScreen.main.bounds.height)
+    }
+    .foregroundColorX(.black)
+    .tabX {
+        Circle()
+            .fill(.gray)
+            .frame(width: 40, height: 40)
+    }
+    
+    PageX {
+        Color.blue
+            .frame(height: UIScreen.main.bounds.height)
+    }
+    .foregroundColorX(.black)
+    .titleX("B")
+    .iconX("person.circle")
+    
+    PageX {
+        Color.green
+            .frame(height: UIScreen.main.bounds.height)
+    }
+    .foregroundColorX(.yellow)
+    .tabX {
+        Rectangle()
+            .fill(.red)
+            .frame(width: 50, height: 50)
+    }
+}
+.ignoredPageSafeAreas(.top)
+.respectedBarSafeAreas(.bottom)
+.barX { bar in
+    bar.padding()
+        .background {
+            Color.white
+        }
+        .cornerRadius(5)
+        .shadow(radius: 5)
+}
+```
+
 ## Contributing
 
 We welcome contributions! Please see CONTRIBUTING.md for details.
