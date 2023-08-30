@@ -120,7 +120,7 @@ NavX(selectedIndex: $selectedIndex) {
 
 We welcome contributions! Please see CONTRIBUTING.md for details.
 
-# License for NavX
+## License
 
 ## Copyright
 

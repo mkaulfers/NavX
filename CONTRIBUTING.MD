@@ -30,4 +30,4 @@ By participating in this project, you agree to abide by our Code of Conduct. Ple
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the same license used in NavX. See [LICENSE](./README) for details.
+By contributing, you agree that your contributions will be licensed under the same license used in NavX. See [LICENSE](./README.MD#license) for details.
