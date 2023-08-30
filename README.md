@@ -118,7 +118,7 @@ NavX(selectedIndex: $selectedIndex) {
 
 ## Contributing
 
-We welcome contributions! Please see CONTRIBUTING.md for details.
+We welcome contributions! Please see [CONTRIBUTING](./CONTRIBUTING.MD) for details.
 
 ## License
 
